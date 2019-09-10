@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>DAY 2 DEMOS</title>
+  <meta name="description" content="DAY 2 DEMOS">
+  <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+
+
+  <script>
+  </script>
+</head>
+<body>
+
+
+
+  <a-scene>
+
+    <a-assets>
+        <img id="360background" src="textures/background.jpg">
+        <img id="brick" src="textures/brick.jpeg">
+        <img id="roof" src="textures/roof.jpg">
+    </a-assets>
+
+    <a-entity id="house" shadow="receive: true" 
+    >
+       <a-box material="src:#brick; repeat: 5 5" position="-5 1.5 -2" rotation="0 20 0"
+       animation="property:position; to: 0 5.5 -10; dur:3000; easing:linear; startEvents:mouseenter"
+       >
+       <a-box id="window1" color="red" scale="0.2 0.2 0.2" position="-.25 .15 0.5"></a-box>
+       <a-box id="window2" color="red" scale="0.2 0.2 0.2" position=".3 .15 0.5"></a-box>
+       <a-box id="door" color="green" scale="0.2 0.4 0.2" position="0 -0.25 0.5" ></a-box>
+       <a-cone id="roof" material="src: #roof; repeat: 10 10" position="-0.00833 0.67292 0.02286" geometry="segmentsHeight: 1; segmentsRadial: 4" rotation="0 45 0" scale="1 0.72 0.99"
+       animation="property: rotation; to: 0 720 0; loop: true; dur: 500"></a-cone>
+     </a-box>
+    </a-entity>
+
+  
+     <a-light color="white" position="3.47415 3.66711 -2.10888" light="color: #fffdf8; castShadow: true; target: #target">
+        <a-entity id="target" position="-1.81685 -1.83282 -2.36904"></a-entity>
+     </a-light>
+
+      <a-light color="white" position="1.18159 3.66711 -1.15862" light="color: #fffdf8; type: ambient; castShadow: true; decay: -1.52; intensity: 0.28"></a-light>
+
+    <a-sky src="#360background">
+    </a-sky>
+
+    <a-camera>
+      <a-cursor></a-cursor>
+    </a-camera>
+
+
+</a-scene>
+
+</body>
+</html>
